@@ -1,13 +1,16 @@
-# Use the official Nginx image as base
+# Use official Nginx image
 FROM nginx:alpine
 
 # Set working directory inside container
-WORKDIR C:\Users\Admin\Downloads\modeling-agency-website-template\modeling-agency-website-template
+WORKDIR /usr/share/nginx/html
 
-# Copy your project files (HTML, CSS, JS) into Nginx web root
+# Remove default Nginx static files
+RUN rm -rf ./*
+
+# Copy your project files (HTML, CSS, JS, images, libs) into container
 COPY . .
 
 # Expose port 80
 EXPOSE 8000
 
-# Nginx runs automatically as entrypoint in base image
+# Nginx starts automatically with the base image
