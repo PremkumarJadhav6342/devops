@@ -8,6 +8,6 @@ WORKDIR C:\Users\Admin\Downloads\modeling-agency-website-template\modeling-agenc
 COPY . .
 
 # Expose port 80
-EXPOSE 8080
+EXPOSE 8000
 
 # Nginx runs automatically as entrypoint in base image
