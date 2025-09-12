@@ -8,4 +8,6 @@ COPY . /modeling-agency-website-template/js
 
 RUN nginx install
 
-Run nginx 8000:8000
+EXPOSE nginx 8000:8000
+
+CMD ['nginx','index.html']
